@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Todo</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body style="background-image: url(https://i0.wp.com/www.sadieshihtzu.com/wp-content/uploads/2011/01/Birds-and-berries-cute-Twitter-website-background.png?w=475&ssl=1) ; background-repeat: no-repeat; background-position: center; background-size: cover; max-height: 100%; background-attachment: fixed; ;" >
+
+ 
+<!--navbar-->
+      <nav class="fixed-top navbar navbar-expand-lg navbar-light bg-dark" style="border-bottom: 1px solid rgb(255,255,255,0.345); ;">
+    <a class="navbar-brand" href="./index.html">
+        <img src="https://www.clipartmax.com/png/middle/422-4223456_to-do-list-vector-todo-list-logos.png" width="80" height="50" alt="" loading="logo">
+      </a>
+    <a class="navbar-brand" href="./index.html" style="color: white;">To-Do List Web Application</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav" >
+      <ul class="navbar-nav" >
+        <li class="nav-item ">
+          
+          <a class="nav-link" href="./todo.html" style="color: white;">ToDo List</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="./index.html" style="color:  rgba(255, 255, 255, 0.575);">LogOut</a>
+        </li>
+      </ul>
+    </div>
+      </nav>
+ <!--/navbar--> 
+
+<h4 style="text-align: center; margin-top: 50px; font-family:Candara ;">YOUR TO-DO LIST</h4>
+
+    <!-- table -->
+
+      <table class="table table-bordered table-light" style="opacity: 0.9; margin-top: 1em; width:900px; margin-left: 300px; text-align: center; align-items: center;" style="background-color: antiquewhite;">
+        <thead style="text-align: center;" >
+            <tr>
+                <th>UserID</th>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Completed</th>
+            </tr>
+            <tbody id="tdata"  >
+             
+            </tbody>
+        </thead>
+    </table>
+<!-- /table
+
+-->
+<script src="./todo.js"></script>
+
+
+
+
+  <!--footer-->
+  <div class="footer1">
+    <p style="padding-top: 10px;">©Teena David</p>
+  </div>
+  <!--/footer-->
+
+
+
+
+</body>
+</html>
