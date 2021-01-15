@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+
+
+    <title>{{title}}</title>
+</head>
+
+
+<body style="background-image: url(https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=853&q=80);">
+
+
+    {{!-- navebar --}}
+    <nav class="navbar navbar-expand-lg navbar-light  fixed-top" style="background-color:white">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">{{title}}</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    {{!-- navebar adding --}}
+
+                    {{#each nav}}
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{this.link}}">{{this.name}}</a>
+                    </li>
+                    {{/each}}
+
+                    {{!-- //navebar adding --}}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+ <!--login-->
+ <div id="login-box" style="background: transparent; margin-top: 10%;">
+  <div class="left">
+    <form action="/books"  onsubmit="return ValidatePassword();" >
+    <h1 style="color: aliceblue;">Login</h1>
+    <br>
+
+    <input id="email" type="text" name="email" placeholder="Email/PhoneNo"  />
+    <div id="msg" style="font-size: 15px;  margin-top: -10px; margin-bottom: 10px;"> </div>
+    <input id="pass" type="password" name="password" placeholder="Password" />
+    <div id="msg1" style="font-size: 15px;  margin-top: -10px; margin-bottom: 10px;"> </div>
+    <input id="submit" type="submit" name="signup_submit" value="login" onclick="return ValidateEmailPhone(); "  />
+  </div>
+  
+
+</form>
+
+</div>
+
+<!--/login-->
+
+    <!-- Footer -->
+    <footer class="page-footer font-small cyan darken-3">
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2021 Copyright:Teena David
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+        integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+        crossorigin="anonymous"></script>
+
+    <script>
+        let mail = document.getElementById("email");
+        let pwd = document.getElementById("pass");
+        let lgin = document.getElementById("submit");
+        //let msg =document.getElementById("msg");
+
+
+        function ValidateEmailPhone() {
+            var regexp = /^([a-zA-Z0-9\.\-]+)@([a-zA-Z0-9\-]+)\.([a-z]{2,3})(\.[a-z]{2,3})?$/; // email
+            var a = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/; //phone no xxx xxx xxx, xxx-xxx-xxx, xxx.xxx.xxx
+
+            if (regexp.test(mail.value)) {
+                return (true);
+            }
+            else {
+
+                document.getElementById("msg").innerHTML = "You have entered an invalid Email/PhoneNo ";
+                return (false);
+            }
+
+        }
+
+
+        function ValidatePassword() {
+           var rgxp=/^[a-zA-Z0-9!@#$%^&*]{8,16}$/;
+            if (rgxp.test(pwd.value)) {
+
+                return true;
+
+
+            }
+
+            else {
+                document.getElementById("msg1").innerHTML = "You have entered an invalid password ";
+                return (false);
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
